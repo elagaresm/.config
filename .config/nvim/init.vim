@@ -1,4 +1,5 @@
 set number
+syntax enable
 set relativenumber
 set shiftwidth=4 " tabs inserted in normal mode with '>'
 set softtabstop=4 " tabs inserted in insert mode default=tabstop
@@ -10,16 +11,6 @@ set nowrap
 set signcolumn=yes
 " set colorcolumn=80 to color the column 80
 
-" transparent background *******************************************
-
-highlight Normal guibg=none ctermbg=none
-highlight LineNr guibg=none ctermbg=none
-highlight Folded guibg=none ctermbg=none
-highlight NonText guibg=none ctermbg=none
-highlight SpecialKey guibg=none ctermbg=none
-highlight VertSplit guibg=none ctermbg=none
-highlight SignColumn guibg=none ctermbg=none
-highlight EndOfBuffer guibg=none ctermbg=none
 
 call plug#begin()
 
@@ -30,9 +21,25 @@ Plug 'tpope/vim-surround' " surround words with quotes w/ ysw' <ysiw'> puts sing
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " autocompletion use CocInstall for each different language 
 Plug 'tpope/vim-commentary' " commenting with gcc & gc
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'overcache/NeoSolarized'
+Plug 'mattn/emmet-vim' " emmet for vim
 " surround.vim
 
 call plug#end()
+
+
+" transparent background *******************************************
+
+colorscheme NeoSolarized
+
+highlight Normal guibg=none ctermbg=none
+highlight LineNr guibg=none ctermbg=none
+highlight Folded guibg=none ctermbg=none
+highlight NonText guibg=none ctermbg=none
+highlight SpecialKey guibg=none ctermbg=none
+highlight VertSplit guibg=none ctermbg=none
+highlight SignColumn guibg=none ctermbg=none
+highlight EndOfBuffer guibg=none ctermbg=none
 
 
 " remap ***********************************************************
@@ -41,6 +48,8 @@ let mapleader=" " " map leader to Space
 
 nnoremap <leader>f :NERDTreeFocus<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
+
+nmap <leader>e <Plug>(emmet-expand-abbr)
 
 " coc.nvim
 

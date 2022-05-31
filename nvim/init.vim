@@ -58,7 +58,7 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " transparent background *******************************************
 
 
-colorscheme onenord
+colorscheme onedark
 syntax off
 
 highlight Normal guibg=none ctermbg=none

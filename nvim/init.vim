@@ -11,6 +11,7 @@ set nowrap
 set signcolumn=yes
 set cursorline
 set textwidth=80
+set foldcolumn=1
 " set colorcolumn=80 to color the column 80
 " filetype plugin indent on
 " filetype indent on

@@ -44,6 +44,7 @@ let mapleader=" " " map leader to Space
 
 nnoremap <leader>f :NERDTreeFocus<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
+let g:NERDTreeNodeDelimiter = "\u00a0" " Fixed delimiter showing ^G with syntax off
 
 " emmet-vim mapping
 

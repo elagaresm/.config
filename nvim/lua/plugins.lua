@@ -1,8 +1,8 @@
 -- if packer is not installed, install packer
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
 -- returns the file in ./config/<name>
@@ -10,10 +10,9 @@ local function get_config(name)
     return string.format('require("config/%s")', name)
 end
 
-
 -- plugins
 
-return require('packer').startup({function(use)
+return require('packer').startup({ function(use)
     -- tracking packer updates
     use 'wbthomason/packer.nvim'
 
@@ -39,10 +38,10 @@ return require('packer').startup({function(use)
 
     use {
         'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = { { 'nvim-lua/plenary.nvim' } },
         config = get_config('telescope')
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     use {
         "williamboman/nvim-lsp-installer",
@@ -71,9 +70,9 @@ return require('packer').startup({function(use)
     use { 'hrsh7th/cmp-nvim-lsp' }
 
     use({
-		"L3MON4D3/LuaSnip",
-		requires = "saadparwaiz1/cmp_luasnip",
-	})
+        "L3MON4D3/LuaSnip",
+        requires = "saadparwaiz1/cmp_luasnip",
+    })
 
     use {
         'hrsh7th/nvim-cmp',
@@ -105,14 +104,16 @@ return require('packer').startup({function(use)
     use {
         'mattn/emmet-vim',
         opt = true,
-        ft = {'html'}
+        ft = { 'html' }
     }
 
     use {
         'alvan/vim-closetag',
         opt = true,
-        ft = {'html'}
+        ft = { 'html' }
     }
+
+    use { 'airblade/vim-gitgutter' }
 
 
     -- Automatically set up your configuration after cloning packer.nvim
@@ -122,9 +123,9 @@ return require('packer').startup({function(use)
     end
 end,
 config = {
-  display = {
-    open_fn = function()
-      return require('packer.util').float({ border = 'rounded' })
-    end
-  }
-}})
+    display = {
+        open_fn = function()
+            return require('packer.util').float({ border = 'rounded' })
+        end
+    }
+} })

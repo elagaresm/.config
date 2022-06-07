@@ -13,4 +13,8 @@ vim.opt.cursorline = true
 vim.opt.textwidth = 80
 vim.opt.foldcolumn = "1"
 vim.opt.termguicolors = true
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+vim.cmd [[
+set clipboard^=unnamed
+]]

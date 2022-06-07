@@ -57,9 +57,9 @@ return require('packer').startup({ function(use)
         config = get_config('trouble')
     }
 
-    use { "lukas-reineke/lsp-format.nvim" }
-
     -- completion
+
+    use {'hrsh7th/cmp-nvim-lsp-signature-help'}
 
     use { 'onsails/lspkind.nvim' } -- symbols in the completion window
     use({ "rafamadriz/friendly-snippets" })

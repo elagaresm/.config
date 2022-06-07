@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
   ["cmp-path"] = {
     loaded = true,
     path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/cmp-path",
@@ -110,11 +115,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
-  },
-  ["lsp-format.nvim"] = {
-    loaded = true,
-    path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
-    url = "https://github.com/lukas-reineke/lsp-format.nvim"
   },
   ["lspkind.nvim"] = {
     loaded = true,
@@ -212,6 +212,11 @@ _G.packer_plugins = {
     path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/Users/enmanuellagares/.local/share/nvim/site/pack/packer/start/vim-surround",
@@ -220,42 +225,42 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require("config/lsp")
-time([[Config for nvim-lspconfig]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require("config/nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require("config/telescope")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require("config/nvim-tree")
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-require("config/autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: onenord.nvim
-time([[Config for onenord.nvim]], true)
-require("config/onenord")
-time([[Config for onenord.nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require("config/nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: lualine.nvim
 time([[Config for lualine.nvim]], true)
 require("config/lualine")
 time([[Config for lualine.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require("config/nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+require("config/autopairs")
+time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require("config/nvim-cmp")
+time([[Config for nvim-cmp]], false)
+-- Config for: onenord.nvim
+time([[Config for onenord.nvim]], true)
+require("config/onenord")
+time([[Config for onenord.nvim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require("config/lsp")
+time([[Config for nvim-lspconfig]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require("config/telescope")
+time([[Config for telescope.nvim]], false)
 -- Config for: trouble.nvim
 time([[Config for trouble.nvim]], true)
 require("config/trouble")
 time([[Config for trouble.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require("config/nvim-tree")
+time([[Config for nvim-tree.lua]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

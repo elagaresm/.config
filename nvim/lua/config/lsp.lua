@@ -4,6 +4,10 @@ require('nvim-lsp-installer').setup {
 
 local lspconfig = require('lspconfig')
 
-lspconfig.sumneko_lua.setup {on_attach = require "lsp-format".on_attach} -- lua
-lspconfig.tsserver.setup {on_attach = require "lsp-format".on_attach} -- javascript and typescript
-lspconfig.html.setup {on_attach = require "lsp-format".on_attach} -- html
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+lspconfig.sumneko_lua.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.cssls.setup {}
+lspconfig.html.setup {}
+lspconfig.pyright.setup {}

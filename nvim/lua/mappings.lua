@@ -3,7 +3,7 @@ local map = vim.keymap.set
 map({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = "<Space>"
 
-map({"i"}, "jk", "<Escape>", { silent = true})
+map({"i"}, "kj", "<Escape>", { silent = true})
 
 
 -- nvim-tree

@@ -16,6 +16,8 @@ return require('packer').startup({ function(use)
     -- tracking packer updates
     use 'wbthomason/packer.nvim'
 
+    use 'lukas-reineke/lsp-format.nvim'
+
 
     -- onenord colorscheme
     use({ "rmehri01/onenord.nvim", config = get_config("onenord") })
@@ -59,26 +61,26 @@ return require('packer').startup({ function(use)
 
     -- completion
 
-    use {'hrsh7th/cmp-nvim-lsp-signature-help'}
+    use({
+        "hrsh7th/nvim-cmp",
+        requires = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
+        },
+        config = get_config("cmp"),
+    })
+
 
     use { 'onsails/lspkind.nvim' } -- symbols in the completion window
+
     use({ "rafamadriz/friendly-snippets" })
-
-    use { 'hrsh7th/cmp-cmdline' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
-    use { 'hrsh7th/cmp-nvim-lsp' }
-
     use({
         "L3MON4D3/LuaSnip",
         requires = "saadparwaiz1/cmp_luasnip",
     })
-
-    use {
-        'hrsh7th/nvim-cmp',
-        config = get_config('nvim-cmp')
-    }
-
 
     -- treesitter
     use {

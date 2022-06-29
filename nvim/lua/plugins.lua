@@ -2,7 +2,8 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
 end
 
 -- returns the file in ./config/<name>
@@ -11,16 +12,19 @@ local function get_config(name)
 end
 
 -- plugins
-
 return require('packer').startup({ function(use)
     -- tracking packer updates
     use 'wbthomason/packer.nvim'
 
     use 'lukas-reineke/lsp-format.nvim'
 
+    -- indent blank line
+    use "lukas-reineke/indent-blankline.nvim"
+
+    use 'kshenoy/vim-signature'
 
     -- onenord colorscheme
-    use({ "rmehri01/onenord.nvim", config = get_config("onenord") })
+    use({ 'olimorris/onedarkpro.nvim', config = get_config("colortheme") })
 
     -- lualine
     use {
@@ -38,6 +42,7 @@ return require('packer').startup({ function(use)
         config = get_config("nvim-tree")
     }
 
+    -- Telescope
     use {
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } },
@@ -45,6 +50,7 @@ return require('packer').startup({ function(use)
     }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+    -- LSP
     use {
         "williamboman/nvim-lsp-installer",
         {
@@ -53,13 +59,14 @@ return require('packer').startup({ function(use)
         }
     }
 
+    -- trouble
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = get_config('trouble')
     }
 
-    -- completion
+    -- completion with cmp
 
     use({
         "hrsh7th/nvim-cmp",
@@ -80,6 +87,7 @@ return require('packer').startup({ function(use)
     use({
         "L3MON4D3/LuaSnip",
         requires = "saadparwaiz1/cmp_luasnip",
+        config = get_config('luasnip')
     })
 
     -- treesitter
@@ -109,12 +117,21 @@ return require('packer').startup({ function(use)
         ft = { 'html' }
     }
 
+    -- autoclosing tag in HTML only
     use {
         'alvan/vim-closetag',
         opt = true,
         ft = { 'html' }
     }
 
+    -- easymotion written in lua
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+        config = get_config('hop')
+    }
+
+    -- git icons at the left of the screen
     use { 'airblade/vim-gitgutter' }
 
 
@@ -124,10 +141,10 @@ return require('packer').startup({ function(use)
         require('packer').sync()
     end
 end,
-config = {
-    display = {
-        open_fn = function()
-            return require('packer.util').float({ border = 'rounded' })
-        end
-    }
-} })
+    config = {
+        display = {
+            open_fn = function()
+                return require('packer.util').float({ border = 'rounded' })
+            end
+        }
+    } })

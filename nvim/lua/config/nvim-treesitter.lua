@@ -1,6 +1,6 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all"
-    ensure_installed = { "html", "javascript", "css", "python", "lua" },
+    ensure_installed = { "html", "javascript", "css", "python", "lua", "css" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -22,7 +22,7 @@ require'nvim-treesitter.configs'.setup {
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = {"html"},
+        additional_vim_regex_highlighting = { "html" },
     },
     indent = {
         enable = true
@@ -37,3 +37,25 @@ require'nvim-treesitter.configs'.setup {
         },
     },
 }
+
+
+-- [[Mappings]]
+
+
+-- nnoremap <C-n> <cmd>NvimTreeToggle<CR>
+
+vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', { noremap = true })
+
+-- nnoremap <leader>r <cmd>NvimTreeRefresh<CR>
+
+vim.api.nvim_set_keymap(
+    'n', '<leader>r', '<cmd>NvimTreeRefresh<CR>',
+    { noremap = true }
+)
+
+-- nnoremap <leader>n <cmd>NvimTreeFindFile<CR>
+
+vim.api.nvim_set_keymap(
+    'n', '<leader>n', '<cmd>NvimTreeFindFile<CR>',
+    { noremap = true }
+)

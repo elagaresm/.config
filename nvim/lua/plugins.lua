@@ -19,7 +19,7 @@ return require('packer').startup({ function(use)
     use 'lukas-reineke/lsp-format.nvim'
 
     -- indent blank line
-    use "lukas-reineke/indent-blankline.nvim"
+    use { "lukas-reineke/indent-blankline.nvim", config = get_config('indent') }
 
     use 'kshenoy/vim-signature'
 

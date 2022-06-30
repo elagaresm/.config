@@ -1,3 +1,5 @@
 iterm2/
 coc/
 wslu/
+.DS_Store
+packer_compiled.lua

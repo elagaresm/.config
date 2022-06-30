@@ -6,6 +6,7 @@ vim.opt.shiftwidth = 4 -- tabs inserted in normal mode with '>'
 vim.opt.softtabstop = 4 -- tabs inserted in insert mode default = tabstop
 vim.opt.expandtab = true -- changes tab to spaces
 vim.opt.scrolloff = 7
+vim.opt.sidescrolloff = 8
 vim.opt.hlsearch = false
 vim.opt.hidden = true
 vim.opt.wrap = false
@@ -15,12 +16,10 @@ vim.opt.textwidth = 80
 vim.opt.foldcolumn = "1"
 vim.opt.termguicolors = true
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.list = true
-vim.o.updatetime = 250
+vim.opt.updatetime = 300
+vim.opt.clipboard = "unnamedplus"
+-- vim.opt.cmdheight = 1
+-- vim.opt.showtabline = 1
+vim.opt.smartindent = true
 -- vim.o.timeoutlen = 500
--- vim.opt.listchars:append("eol:↴")
-
-
-vim.cmd [[
-set clipboard^=unnamed
-]]
+vim.opt.undofile = true

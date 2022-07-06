@@ -23,4 +23,10 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.smartindent = true
 -- vim.o.timeoutlen = 500
 vim.opt.undofile = true
-vim.o.background = "light"
+vim.o.background = "dark"
+-- vim.cmd("syntax off")
+
+vim.cmd[[
+set guicursor=i:block
+syntax off
+]]

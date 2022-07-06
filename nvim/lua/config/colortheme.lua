@@ -26,25 +26,25 @@ onedarkpro.setup({
         underline = false, -- Use the themes opinionated underline styles?
         undercurl = true, -- Use the themes opinionated undercurl styles?
         cursorline = true, -- Use cursorline highlighting?
-        transparency = true, -- Use a transparent background?
+        transparency = false, -- Use a transparent background?
         terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
         window_unfocussed_color = true, -- When the window is out of focus, change the normal background?
     }
 })
 onedarkpro.load()
 
-vim.cmd [[
-  " colorscheme onedarkpro
-  syntax off
+-- vim.cmd [[
+--   " colorscheme onedarkpro
+--   " syntax off
 
-  " transparent background
+--   " transparent background
 
-  " highlight Normal guibg=none ctermbg=none
-  " highlight LineNr guibg=none ctermbg=none
-  " highlight Folded guibg=none ctermbg=none
-  " highlight NonText guibg=none ctermbg=none
-  " highlight SpecialKey guibg=none ctermbg=none
-  " highlight VertSplit guibg=none ctermbg=none
-  " highlight SignColumn guibg=none ctermbg=none
-  " highlight EndOfBuffer guibg=none ctermbg=none
-]]
+--   " highlight Normal guibg=none ctermbg=none
+--   " highlight LineNr guibg=none ctermbg=none
+--   " highlight Folded guibg=none ctermbg=none
+--   " highlight NonText guibg=none ctermbg=none
+--   " highlight SpecialKey guibg=none ctermbg=none
+--   " highlight VertSplit guibg=none ctermbg=none
+--   " highlight SignColumn guibg=none ctermbg=none
+--   " highlight EndOfBuffer guibg=none ctermbg=none
+-- ]]

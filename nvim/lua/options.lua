@@ -23,3 +23,4 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.smartindent = true
 -- vim.o.timeoutlen = 500
 vim.opt.undofile = true
+vim.o.background = "light"

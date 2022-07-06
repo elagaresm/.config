@@ -1,7 +1,7 @@
 local onedarkpro = require("onedarkpro")
 onedarkpro.setup({
     dark_theme = "onedark", -- The default dark theme
-    light_theme = "onelight", -- The default light theme
+    light_theme = "onedark_vivid", -- The default light theme
     -- Theme can be overwritten with 'onedark' or 'onelight' as a string
     colors = {}, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
     hlgroups = {}, -- Override default highlight groups
@@ -34,7 +34,7 @@ onedarkpro.setup({
 onedarkpro.load()
 
 vim.cmd [[
-  colorscheme onedarkpro
+  " colorscheme onedarkpro
   syntax off
 
   " transparent background
